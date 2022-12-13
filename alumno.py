@@ -1,4 +1,4 @@
-class estudiante():
+class Informacionestudiante():
     def __init__(self,nombre,apellido,curso,materia):
         self.nombre = nombre
         self.apellido = apellido
