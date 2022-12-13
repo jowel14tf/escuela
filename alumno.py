@@ -12,3 +12,4 @@ tu apellido es: {1}
 tu curso es:{2}
 tu materia es:{3}
 """.format(self.nombre, self.apellido, self.curso, self.materia)
+        return informacion
