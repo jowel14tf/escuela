@@ -6,7 +6,51 @@ from time import sleep
 #sleep(1.2)
 #despues de terminar la clase hay que saber lo curso para eso hay que hacer
 #que cada curso tenga un estudiante
-class curso():
+class cursos():
+
+    PrimariaGrado = None
+    SecundariaGrado = None
+
+    def cursoPrimario(self):
+        
+        def Primero():
+            pass
+
+        def Segundo():
+            pass
+
+        def Tercero():
+            pass
+
+        def Cuarto():
+            pass
+
+        def Quinto():
+            pass
+
+        def Sexto():
+            pass
+
+    def SucandariaGrado(self):
+
+        def PrimeroSecundaria():
+            pass
+        
+        def SedundoSecundaria():
+            pass
+
+        def TerceroScundaria():
+            pass
+
+        def CuartoSecundaria():
+            pass
+
+        def QuintoSecundaria():
+            pass
+
+        def SextoSecundaria():
+            pass
+            
     def alumnosContar(self):
         alumnos = int(input("cuantos alumnos hay?"))
         rango = range(alumnos)
@@ -14,16 +58,11 @@ class curso():
         for crear in range(alumnos):
             nombre = input(f"cual es el nombre del estudiante {crear}")
             apellido = input("cual es el apellido?")
-            andrew = estudiante(nombre,apellido,'primaria' , "matematica")
-            guardado.append(andrew.nombre)
+            persona = estudiante(nombre,apellido,'primaria' , "matematica")
+            guardado.append(persona.nombre)
             print(f"has creado una alumno con el nombre de {nombre}")
-            print(andrew.__str__())
+            print(persona.__str__())
         for i in guardado:
-            print(f"tus estuante son: {i}")
+            print(f"tus estudiantes son: {i}")
         return "aqui acaba el guardado de alumno en el curso"
-"""
-con el def de alumnosContar vamos hacer unos 12 curso de la mitad primaria y la otra secundaria :)
-se bienen cosas
-"""
-print(curso.alumnosContar(self=curso))
 
