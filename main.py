@@ -1,7 +1,7 @@
 from profesor import *
 from alumno import *
 from time import sleep
-
+from io import open
 
 alumnos = None
 
@@ -35,9 +35,74 @@ class cursos():
                 print(f"el curso de {curso} tiene los datos del estudiante numero {alumnos} \n sus datos son: {mostrar}")
                 sleep(1)
         return ""
+    
+    def EscribirTareas(self):
+        Tareas = input('cual es tu tarea?')
+        
+        archivo = open('Tareas.txt', "w")
+
+        archivo.write(Tareas)
+
+        decicion = input('quieres escribir mas tareas?' + 'si/no')
+        decicion = decicion.lower()
+        while decicion == "si" or decicion == " si":
+            Tareas = input('cual es tu otra tarea tarea? \n')
+            sleep(1)
+            archivo.write("\n" + Tareas)
+            decicion = input('quieres escribir mas tareas?' + 'si/no')
+            if decicion == "no" or decicion == " no":
+                sleep(1)
+                print("ok las tareas que anotaste estan el archivo llamado tareas")
+                archivo.close()
+                break;
+        archivo.close()
+        return ""
+
+    def AgregarTareas(self):
+        archivo = open("Tareas.txt", "a")
+        tareas = input("cual es la tarea que quieres agregar \n")
+        archivo.write("\n")
+        archivo.write(tareas)
+        decicion = input('quires agregar una tarea mas? si/no')
+        while decicion == "si" or decicion == " si":
+            tareas = input("cual es la tareas que quieres agregar")
+            archivo.write("\n" + tareas)
+            if decicion == "no" or decicion == " no":
+                print("ok terminamos de agregar mas tareas")
+                archivo.close()
+                break;
+            decicion = input('quires agregar una tarea mas? si/no')
+        return ""
+
+    def MostrarTareas(self):
+        archivo = open('Tareas.txt',"r")
+
+        contenido = archivo.read()
+
+        archivo.close
+
+        print("el archivo contienen estas tareas: \n" )
+        
+        return contenido
+
+    def MostaraUsuario(self):
+        decicion = input("quieres agregar tareas ? si/no")
+
+        if decicion == "si" or decicion == " si":
+            self.EscribirTareas(self=cursos)
+            decicion = input("ya que agregaste algunas tareas estas seguras que \n terminaste de hacer tareas si/no ")
+            if decicion == "si" or decicion == " si":
+                self.AgregarTareas(self=cursos)
+            else:
+                print("ok pues estamos de acuerdo :)")
+        
+        decicion = input("ya que estamos seguros de que anotaste todas las tareas \n quieres verla")
+        if decicion == "si" or decicion == " si":
+            self.MostaraUsuario(self=cursos)
+        else:
+            print("ok igual puedes ver las tareas en el archivo.txt")
 
 class CursosPrimaria(cursos):
-    
     def PrimeroPrimaria(self):
         quieres = input("quieres registrar alumnos en el curso de primero de primaria y/n")
         if quieres == "y" or quieres == " y":
@@ -109,5 +174,4 @@ class CursosPrimaria(cursos):
             curso = "sexto de primaria"
             self.mostrarAlumnos(curso)
         return ""
-
 
