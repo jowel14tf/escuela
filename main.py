@@ -7,33 +7,30 @@ alumnos = None
 
 class cursos():
     guadado = []
-    def alumnosContar(self,alumnos):
-        try:
-            global rango
-            rango = range(alumnos)
-            global guardado
-            guardado = []
-            for crear in range(alumnos):
-                nombre = input(f"cual es el nombre del estudiante {crear}")
-                apellido = input("cual es el apellido?")
-                global persona
-                persona = Informacionestudiante(nombre,apellido,'primaria' , "matematica")
-                guardado.append(persona.__str__())
-                print(f"has creado una alumno con el nombre de {nombre}")
-                print(persona.__str__())
-                global i
+    def alumnosContar(self):
+        alumnos = int(input("cuantos alumnos hay"))
+        global rango
+        rango = range(alumnos)
+        global guardado
+        guardado = []
+        for crear in range(alumnos):
+            nombre = input(f"cual es el nombre del estudiante {crear}")
+            apellido = input("cual es el apellido?")
+            global persona
+            persona = Informacionestudiante(nombre,apellido,'primaria' , "matematica")
+            guardado.append(persona.__str__())
+            print(f"has registrado un estudiante con este nombre:{nombre}")
+            #print(persona.__str__())
+            global i
+        for i in guardado:
+            pass
+        quieres = input("quieres ver tus estudiante de este curso ? y/n")
+        if quieres == "y" or quieres == " y":
             for i in guardado:
                 print(f"tus estudiantes son: {i}")
                 sleep(1)
-        except TypeError:
-            print("no se puedo imprimir la informacion por que falta \n el parametro alumnos")
-        return ""
-
-    def mostrarAlumnos(self,curso):
-        for alumnos in rango:
-            for mostrar in guardado:
-                print(f"el curso de {curso} tiene los datos del estudiante numero {alumnos} \n sus datos son: {mostrar}")
-                sleep(1)
+        else:
+            print("ok")
         return ""
     
     def EscribirTareas(self):
@@ -107,71 +104,128 @@ class CursosPrimaria(cursos):
         quieres = input("quieres registrar alumnos en el curso de primero de primaria y/n")
         if quieres == "y" or quieres == " y":
             alumnos = int(input("cuantos alumnos hay en primero de primaria"))
-            self.alumnosContar(alumnos)
-        quieres = input("quieres ver cuales son tus alumnos que estan en el curso de primero de primaria")
-        sleep(1)
-        if quieres == "y" or quieres == " y":
-            curso = "primero de primaria"
-            self.mostrarAlumnos(curso)
+            self.alumnosContar(self=cursos)
         return ""
 
     def SegundoPrimaria(self):
         quieres = input("quieres registrar alumnos en el curso de segundo de primaria y/n")
         if quieres == "y" or quieres == " y":
             alumnos = int(input("cuantos alumnos hay en segundo de primaria"))
-            self.alumnosContar(alumnos)
-        quieres = input("quieres ver cuales son tus alumnos que estan en el curso de segundo de primaria")
-        sleep(1)
-        if quieres == "y" or quieres == " y":
-            curso = "segundo de primaria"
-            self.mostrarAlumnos(curso)
+            self.alumnosContar(self=cursos)
         return ""
 
     def TerceroPrimeria(self):
         quieres = input("quieres registrar alumnos en el curso de tercero de primaria y/n")
         if quieres == "y" or quieres == " y":
             alumnos = int(input("cuantos alumnos hay en tercero de primaria"))
-            self.alumnosContar(alumnos)
-        quieres = input("quieres ver cuales son tus alumnos que estan en el curso de tercero de primaria")
-        sleep(1)
-        if quieres == "y" or quieres == " y":
-            curso = "tercero de primaria"
-            self.mostrarAlumnos(curso)
+            self.alumnosContar(self=cursos)
         return ""
 
     def CuartoPrimaria(self):
         quieres = input("quieres registrar alumnos en el curso de cuarto de primaria y/n")
         if quieres == "y" or quieres == " y":
             alumnos = int(input("cuantos alumnos hay en cuarto de primaria"))
-            self.alumnosContar(alumnos)
-        quieres = input("quieres ver cuales son tus alumnos que estan en el curso de cuarto de primaria")
-        sleep(1)
-        if quieres == "y" or quieres == " y":
-            curso = "cuarto de primaria"
-            self.mostrarAlumnos(curso)
+            self.alumnosContar(self=cursos)
         return ""
 
     def QuintoPrimaria(self):
         quieres = input("quieres registrar alumnos en el curso de quinto de primaria y/n")
         if quieres == "y" or quieres == " y":
             alumnos = int(input("cuantos alumnos hay en quinto de primaria"))
-            self.alumnosContar(alumnos)
-        quieres = input("quieres ver cuales son tus alumnos que estan en el curso de quinto de primaria")
-        sleep(1)
-        if quieres == "y" or quieres == " y":
-            curso = "quinto de primaria"
-            self.mostrarAlumnos(curso)
+            self.alumnosContar(self=cursos)
         return ""
 
     def SextoPrimaria(self):
         quieres = input("quieres registrar alumnos en el curso de sexto de primaria y/n")
         if quieres == "y" or quieres == " y":
             alumnos = int(input("cuantos alumnos hay en sexto de primaria"))
-            self.alumnosContar(alumnos)
-        quieres = input("quieres ver cuales son tus alumnos que estan en el curso de sexto de primaria")
+            self.alumnosContar(self=cursos)
+        return ""
+
+class CursosSecundaria(cursos):
+    
+    def PrimeroSecundaria(self):
+        quieres = input("quieres registrar alumnos en el curso de primero de secundaria y/n")
+        if quieres == "y" or quieres == " y":
+            alumnos = int(input("cuantos alumnos hay en primero de secundaria"))
+            self.alumnosContar(self=cursos)
+        quieres = input("quieres ver cuales son tus alumnos que estan en el curso de primero de secundaria")
         sleep(1)
         if quieres == "y" or quieres == " y":
-            curso = "sexto de primaria"
+            curso = "primero de secundaria"
             self.mostrarAlumnos(curso)
         return ""
 
+    def segundoSecundaria(self):
+        quieres = input("quieres registrar alumnos en el curso de segundo de secundaria y/n")
+        if quieres == "y" or quieres == " y":
+            alumnos = int(input("cuantos alumnos hay en segundo de secundaria"))
+            self.alumnosContar(self=cursos)
+        quieres = input("quieres ver cuales son tus alumnos que estan en el curso de segundo de secundaria")
+        sleep(1)
+        if quieres == "y" or quieres == " y":
+            curso = "segundo de secundaria"
+            self.mostrarAlumnos(curso)
+        return ""
+
+    def terceroSecundaria(self):
+        quieres = input("quieres registrar alumnos en el curso de tercero de secundariay/n")
+        if quieres == "y" or quieres == " y":
+            alumnos = int(input("cuantos alumnos hay en tercero de secundaria"))
+            self.alumnosContar(self=cursos)
+        quieres = input("quieres ver cuales son tus alumnos que estan en el curso de tercero de secundaria")
+        sleep(1)
+        if quieres == "y" or quieres == " y":
+            curso = "tercero de secundaria"
+            self.mostrarAlumnos(curso)
+        return ""
+
+    def cuartoSecundaria(self):
+        quieres = input("quieres registrar alumnos en el curso de cuarto de secundaria y/n")
+        if quieres == "y" or quieres == " y":
+            alumnos = int(input("cuantos alumnos hay en cuarto de secundaria"))
+            self.alumnosContar(self=cursos)
+        quieres = input("quieres ver cuales son tus alumnos que estan en el curso de cuarto de secundaria")
+        sleep(1)
+        if quieres == "y" or quieres == " y":
+            curso = "cuarto de secundaria"
+            self.mostrarAlumnos(curso)
+        return ""
+
+    def quintoSecundaria(self):
+        quieres = input("quieres registrar alumnos en el curso de quinto de secundaria y/n")
+        if quieres == "y" or quieres == " y":
+            alumnos = int(input("cuantos alumnos hay en quinto de secundaria"))
+            self.alumnosContar(self=cursos)
+        quieres = input("quieres ver cuales son tus alumnos que estan en el curso de quinto de secundaria")
+        sleep(1)
+        if quieres == "y" or quieres == " y":
+            curso = "quinto de secundaria"
+            self.mostrarAlumnos(curso)
+        return ""
+
+    def sextoSecundaria(self):
+        quieres = input("quieres registrar alumnos en el curso de sexto de secundaria y/n")
+        if quieres == "y" or quieres == " y":
+            alumnos = int(input("cuantos alumnos hay en sexto de secundaria"))
+            self.alumnosContar(self=cursos)
+        quieres = input("quieres ver cuales son tus alumnos que estan en el curso de sexto de secundaria")
+        sleep(1)
+        if quieres == "y" or quieres == " y":
+            curso = "sexto de secundaria"
+            self.mostrarAlumnos(curso)
+        return ""
+
+print("hola director")
+sleep(0.5)
+print("la semana, TODOS LOS CURSOS ESTAN VACIOS!!!")
+sleep(0.5)
+
+eleccion = input("por cual curso vamoas empezar primaria/secundaria")
+
+if eleccion == "primaria" or eleccion == " primaria":
+    print("primero vamos con primero de primaria")
+    CursosPrimaria.PrimeroPrimaria(self=cursos)
+
+# ahora toca arreglar secundaria y despues configurar para que se puedan ver todos y primaria
+#y hacer terminar la 1.0
